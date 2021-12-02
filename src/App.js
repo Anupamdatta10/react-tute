@@ -1,12 +1,13 @@
 import './App.css';
 import Nav from './componants/nav';
-import Add from './componants/add';
+//import Text from './componants/text';
+import Todo from './componants/todo';
 function App() {
   return (
     <div className="App">
      
       <Nav/>
-      <Add/>
+     <Todo/>
     </div>
   );
 }
