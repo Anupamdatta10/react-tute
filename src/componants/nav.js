@@ -2,7 +2,7 @@
 export default function nav() {
     return (
         <>
-            <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
+            {/* <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
                 <div className="container-fluid">
                     <a className="navbar-brand" href="#">Navbar</a>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
@@ -42,7 +42,7 @@ export default function nav() {
                         </form>
                     </div>
                 </div>
-            </nav>
+            </nav> */}
         </>
     )
 }
