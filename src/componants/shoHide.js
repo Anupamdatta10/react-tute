@@ -1,21 +1,23 @@
 import React from 'react';
+import Randuser from './randomuser';
 class ClassComp extends React.Component
 {
     constructor()
     {
         super();
         this.state={
-            name:"",
+            name:"anupam",
+            show:true
         };
     }
     show=()=>
     { console.log('hello');
-        if(this.state.name==null)
+        if(this.state.show==true)
         {
-            this.setState({name:'anupam'});
+            this.setState({show:false});
         }
         else{
-            this.setState({name:null});
+            this.setState({show:true});
         }
     }
     render(){
@@ -23,7 +25,7 @@ class ClassComp extends React.Component
            
             <div>
                 <button onClick={this.show}>login</button><br/>
-                {this.state.name==null?null:this.state.name}
+                {this.state.show==false?null:<Randuser/>}
             </div>
            
         )
