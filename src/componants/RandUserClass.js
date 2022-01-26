@@ -21,13 +21,14 @@ class RandUserClass extends React.Component
     {  
         console.log("button click");
         this.setState({loading:true});
-       var x=await  axios.get('https://randomuser.me/api/')
-            console.log("hello",x.data.results[0].name.first);
+       var x=await  axios.get('api/v1/to_do/users/list')
+            console.log("hello=====>",x);
         
-            var fullname=x.data.results[0].name.first+" "+x.data.results[0].name.last;
+            var fullname=x.data[0].f_name;
+            var img=x.data[0].profile_picture_type+","+x.data[0].profile_picture
             this.setState({name:fullname,
-                img:x.data.results[0].picture.large,
-                email:x.data.results[0].email,
+                email:x.data[0].email,
+                img:img,
                 loading:false
             });
         
@@ -35,13 +36,13 @@ class RandUserClass extends React.Component
     }
      render(){
         console.log("render");
-        console.log("======",this.state.loading);
+        console.log("======",this.state.img);
         return(
             <>
             {
             (this.state.loading)?
             <img className="App-logo" src="https://www.freeiconspng.com/thumbs/load-icon-png/load-icon-png-8.png"/>:
-            <div> 
+            <div className="App-header"> 
                  <img src={this.state.img} className='profileimg'/>
                  <div>name {this.state.name}</div>
                  <div>email {this.state.email}</div>
