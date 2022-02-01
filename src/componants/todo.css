@@ -1,0 +1,18 @@
+.primary{
+    text-align: center;
+    font-style: italic;
+    color: rgb(240, 191, 28);
+    
+    
+}
+
+.taskname{
+    font-size: 30px;
+    color: chartreuse;
+    
+}
+.taskstatus{
+    font-size: 30px;
+    color: rgb(233, 229, 10);
+    
+}

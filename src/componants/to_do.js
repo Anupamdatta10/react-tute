@@ -4,6 +4,7 @@ import axios from 'axios';
 import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
+import  './todo.css'
 class RandUserClass extends React.Component {
     constructor() {
         console.log("constructer");
@@ -86,20 +87,27 @@ class RandUserClass extends React.Component {
     }
     render() {
         return (<>
-            <button onClick={()=>this.handleShow()}>add task</button>
-            {(this.state.loading) ?
-                <img className="App-logo" src="https://www.freeiconspng.com/thumbs/load-icon-png/load-icon-png-8.png" /> :
+        <h1 className='primary'><u >TO-DO LIST</u></h1>
+            <div className='container'>
+                <button type="button" className="btn btn-primary btn-lg "  onClick={() => this.handleShow()}>ADD TASK</button>
 
-                this.state.task.map((task_details) => (
+                {(this.state.loading) ?
+                    <img className="App-logo" src="https://www.freeiconspng.com/thumbs/load-icon-png/load-icon-png-8.png" /> :
 
-                    <div key={task_details.T_id}>
-                        {task_details.T_Name}
-                        <span>{task_details.Status}</span>
-                        <button onClick={() => this.updateTask(task_details)}>update</button>
-                        <button onClick={() => this.deleteTask(task_details)}>delete</button>
-                    </div>
-                ))
-            }
+                    this.state.task.map((task_details) => (
+
+                        <div className=' p-3 border border-primary  my-2 rounded-3 shadow row' key={task_details.T_id}>
+                            <span className='taskname col-4'>{task_details.T_Name}</span>
+                            <span className='taskstatus col-4'>{task_details.Status}</span>
+                            <div className='col-4 btn-toolbar'>
+                                <button type='button' className='btn btn-success btn-outline-primary' onClick={() => this.updateTask(task_details)}>UPDATE</button>
+                                <button type='button' className='btn btn-danger ' onClick={() => this.deleteTask(task_details)}>DELETE</button>
+                            </div>
+
+                        </div>
+                    ))
+                }
+        
            <Modal show={this.state.show} onHide={()=>this.handleClose()}>
         <Modal.Header closeButton>
           <Modal.Title>Modal heading</Modal.Title>
@@ -119,6 +127,7 @@ class RandUserClass extends React.Component {
           </Button>
         </Modal.Footer>
       </Modal>
+      </div>
         </>)
     }
 }
