@@ -4,7 +4,7 @@ import axios from 'axios';
 import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
-import  './todo.css'
+import './todo.css'
 class RandUserClass extends React.Component {
     constructor() {
         console.log("constructer");
@@ -12,8 +12,8 @@ class RandUserClass extends React.Component {
         this.state = {
             task: [],
             loading: true,
-            show:false,
-            taskname:''
+            show: false,
+            taskname: ''
         };
     }
 
@@ -57,23 +57,23 @@ class RandUserClass extends React.Component {
         this.userdisplay();
     }
     handleClose = () => {
-        console.log("close",this.state.show)
-        this.setState({ show:false})
+        console.log("close", this.state.show)
+        this.setState({ show: false })
     };
     handleShow = () => {
         console.log("modal show")
-        this.setState({ show:true})
-       
+        this.setState({ show: true })
+
     };
-    taskadd=async ()=>{
+    taskadd = async () => {
         console.log("add task");
         var x = await axios({
             method: 'post',
-            url: 'api/v1/to_do/' ,
-            data:{
+            url: 'api/v1/to_do/',
+            data: {
                 "T_Name": this.state.taskname,
-                "user_id":"1",
-                "Status":"To_do"
+                "user_id": "1",
+                "Status": "To_do"
             }
         });
         console.log(x);
@@ -81,16 +81,19 @@ class RandUserClass extends React.Component {
         this.userdisplay()
 
     }
-    taskinput =(e) =>{
-        this.setState({taskname:e.target.value})
+    taskinput = (e) => {
+        this.setState({ taskname: e.target.value })
         console.log(this.state.taskname)
     }
     render() {
         return (<>
-        <h1 className='primary'><u >TO-DO LIST</u></h1>
+            <h1 className='primary'><u >TO-DO LIST</u></h1>
             <div className='container'>
-                <button type="button" className="btn btn-primary btn-lg "  onClick={() => this.handleShow()}>ADD TASK</button>
-
+                <button type="button" className="btn btn-primary btn-lg " onClick={() => this.handleShow()}>ADD TASK</button>
+                <div className='my-2 rounded-3 shadow row'>
+                    <span className='header col-4'><u>TASKNAME</u></span>
+                    <span className='header col-4'><u>STATUS</u></span>
+                </div>
                 {(this.state.loading) ?
                     <img className="App-logo" src="https://www.freeiconspng.com/thumbs/load-icon-png/load-icon-png-8.png" /> :
 
@@ -107,27 +110,27 @@ class RandUserClass extends React.Component {
                         </div>
                     ))
                 }
-        
-           <Modal show={this.state.show} onHide={()=>this.handleClose()}>
-        <Modal.Header closeButton>
-          <Modal.Title>Modal heading</Modal.Title>
-        </Modal.Header>
-        <Modal.Body><Form>
-  <Form.Group className="mb-3" controlId="formBasicTask">
-    <Form.Label>Task Name</Form.Label>
-    <Form.Control type="text" placeholder="Enter Task" onKeyUp={(e)=>this.taskinput(e)} />
-  </Form.Group>
-  </Form></Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary" onClick={()=>this.handleClose()}>
-            Close
-          </Button>
-          <Button variant="primary" onClick={()=>this.taskadd()}>
-            Save Changes
-          </Button>
-        </Modal.Footer>
-      </Modal>
-      </div>
+
+                <Modal show={this.state.show} onHide={() => this.handleClose()}>
+                    <Modal.Header closeButton>
+                        <Modal.Title>Modal heading</Modal.Title>
+                    </Modal.Header>
+                    <Modal.Body><Form>
+                        <Form.Group className="mb-3" controlId="formBasicTask">
+                            <Form.Label>Task Name</Form.Label>
+                            <Form.Control type="text" placeholder="Enter Task" onKeyUp={(e) => this.taskinput(e)} />
+                        </Form.Group>
+                    </Form></Modal.Body>
+                    <Modal.Footer>
+                        <Button variant="secondary" onClick={() => this.handleClose()}>
+                            Close
+                        </Button>
+                        <Button variant="primary" onClick={() => this.taskadd()}>
+                            Save Changes
+                        </Button>
+                    </Modal.Footer>
+                </Modal>
+            </div>
         </>)
     }
 }
