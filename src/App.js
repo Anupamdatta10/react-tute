@@ -8,8 +8,8 @@ import React from "react";
 //import To_do from "./componants/to_do";
 //import ClassComp from './componants/classcomp';
 //import Randuser from './componants/randomuser';
-//import Sign_up from "./componants/signup";
-import Login from "./componants/login"
+import Sign_up from "./componants/signup";
+//import Login from "./componants/login"
 // import {
 //   BrowserRouter as Router,
 //   Routes,
@@ -18,9 +18,9 @@ import Login from "./componants/login"
 // } from "react-router-dom";
 function App() {
   return (
-    <Login/>
-    //<Sign_up />
-    // <To_do />
+    //<Login/>
+    <Sign_up />
+    //<To_do />
   );
 }
 
