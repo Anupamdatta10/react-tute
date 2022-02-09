@@ -10,6 +10,7 @@ import React from "react";
 //import Randuser from './componants/randomuser';
 import Sign_up from "./componants/signup";
 //import Login from "./componants/login"
+//import Dashboard from "./componants/dashboard";
 // import {
 //   BrowserRouter as Router,
 //   Routes,
@@ -19,6 +20,7 @@ import Sign_up from "./componants/signup";
 function App() {
   return (
     //<Login/>
+    //<Dashboard/>
     <Sign_up />
     //<To_do />
   );

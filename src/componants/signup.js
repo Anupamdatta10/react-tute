@@ -18,7 +18,7 @@ class Signup extends React.Component {
       email: "",
       phno: "",
       password: "",
-      address: "",
+      address1: "",
     };
   }
   userdisplay = async () => {
@@ -28,21 +28,22 @@ class Signup extends React.Component {
       user: x.data,
     });
   };
-  Adduser = async () => {
+  Adduser = async (e) => {
+    e.preventDefault();
     console.log("add user");
-    var x = await axios({
-      method: "post",
-      url: "api/v1/to_do/users/create",
-      data: {
-        f_name: this.state.fname,
-        l_name: this.state.lname,
-        email: this.state.email,
-        password: this.state.password,
-        ph_no: this.state.ph,
-        address: this.state.address,
-      },
-    });
-    console.log(x);
+    // var x = await axios({
+    //   method: "post",
+    //   url: "api/v1/to_do/users/create",
+    //   data: {
+    //     f_name: this.state.fname,
+    //     l_name: this.state.lname,
+    //     email: this.state.email,
+    //     password: this.state.password,
+    //     ph_no: this.state.ph,
+    //     address1: this.state.address,
+    //   },
+    // });
+    console.log(this.state.fname);
   };
   finput = (e) => {
     this.setState({ fname: e.target.value });
@@ -68,6 +69,13 @@ class Signup extends React.Component {
     this.setState({ address: e.target.value });
     console.log(this.state.address);
   };
+
+  oneSingeFunc=(event)=>{
+    event.preventDefault();
+    console.log(event.target.name)
+    console.log("=====",event.target.value);
+    this.setState({[event.target.name]:event.target.value})
+  }
   render() {
     return (
       <Container>
@@ -82,8 +90,9 @@ class Signup extends React.Component {
                   <Form.Label>First Name</Form.Label>
                   <Form.Control
                     type="text"
+                    name="fname"
                     placeholder="Enter First Name"
-                    onKeyUp={(e) => this.finput(e)}
+                    onKeyUp={(e) => this.oneSingeFunc(e)}
                   />
                 </Form.Group>
               </Col>
@@ -93,7 +102,7 @@ class Signup extends React.Component {
                   <Form.Control
                     type="text"
                     placeholder="Enter Last Name"
-                    onKeyUp={(e) => this.linput(e)}
+                   // onKeyUp={(e) => this.oneSingeFunc(e)}
                   />
                 </Form.Group>
               </Col>
@@ -103,7 +112,7 @@ class Signup extends React.Component {
                   <Form.Control
                     type="email"
                     placeholder="Enter email"
-                    onKeyUp={(e) => this.emailinput(e)}
+                   // onKeyUp={(e) => this.emailinput(e)}
                   />
                   <Form.Text className="text-muted">
                     We'll never share your email with anyone else.
@@ -116,7 +125,7 @@ class Signup extends React.Component {
                   <Form.Control
                     type="tel"
                     placeholder="Enter Phone number"
-                    onKeyUp={(e) => this.phinput(e)}
+                   // onKeyUp={(e) => this.phinput(e)}
                   />
                 </Form.Group>
               </Col>
@@ -132,7 +141,7 @@ class Signup extends React.Component {
                   <Form.Control
                     type="password"
                     placeholder="Confirm Password"
-                    onKeyUp={(e) => this.passinput(e)}
+                    //onKeyUp={(e) => this.passinput(e)}
                   />
                 </Form.Group>
               </Col>
@@ -141,7 +150,7 @@ class Signup extends React.Component {
                 <Form.Control
                   type="text"
                   placeholder="xyz street"
-                  onKeyUp={(e) => this.addinput(e)}
+                  //onKeyUp={(e) => this.addinput(e)}
                 />
               </Form.Group>
 
@@ -151,7 +160,8 @@ class Signup extends React.Component {
               <Button
                 variant="primary"
                 type="submit"
-                onClick={() => this.Adduser()}
+                onClick={(e) => this.Adduser(e)}
+               //onClick={(e)=>{this.oneSingeFunc(e)}}
               >
                 Submit
               </Button>

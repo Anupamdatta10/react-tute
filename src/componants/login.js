@@ -39,6 +39,9 @@ class Login extends React.Component {
 //       },
 //     });
 //   };
+clickme=()=>{
+  console.log('kkkk')
+}
   render() {
     return (
       <Container mx-4>
@@ -62,7 +65,7 @@ class Login extends React.Component {
                   <Form.Control type="password" placeholder="Password" />
                 </Form.Group>
               </Row>
-              Don't have an account? SignUp
+              Don't have an account? <span>SignUp</span>
                     <center><Button variant="primary" type="submit">
                         Submit
                     </Button></center>
