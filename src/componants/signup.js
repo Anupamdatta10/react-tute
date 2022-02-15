@@ -7,6 +7,7 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
 import { Container } from "react-bootstrap";
+import { Link } from "react-router-dom";
 class Signup extends React.Component {
   constructor() {
     console.log("constructer");
@@ -153,7 +154,8 @@ class Signup extends React.Component {
                   //onKeyUp={(e) => this.addinput(e)}
                 />
               </Form.Group>
-
+              <div>Already have account?<Link to="/">Login</Link></div>
+              
               <Form.Group className="mb-3" controlId="formBasicCheckbox">
                 <Form.Check type="checkbox" label="Check me out" />
               </Form.Group>
