@@ -21,8 +21,8 @@ import React from "react";
 //   Link
 // } from "react-router-dom";
 //import Add from './componants/add'
-//import Question from "./componants/questionPaper/question";
-import Fees from "./componants/student_fees/fees";
+import Question from "./componants/questionPaper/question";
+//import Fees from "./componants/student_fees/fees";
 function App() {
   return (
   //   <BrowserRouter>
@@ -41,8 +41,8 @@ function App() {
     // <RandUserClass/>
     // <Users />
     //<Add/>
-    // <Question/>
-    <Fees/>
+     <Question/>
+    //<Fees/>
   );
 }
 
