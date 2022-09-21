@@ -21,7 +21,7 @@ class RandUserClass extends React.Component
     {  
         console.log("button click");
         this.setState({loading:true});
-       var x=await  axios.get('api/v1/to_do/users/list')
+       var x=await  axios.get('https://randomuser.me/api/')
             console.log("hello=====>",x);
         
             var fullname=x.data[0].f_name;

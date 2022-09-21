@@ -1,22 +1,24 @@
 
 import React, { useState } from 'react';
-export default function Add()
+export default function Add(){
+// const [z,setz]=useState(0)
+// const [x, setx] = useState(0);
+// const [y, sety] = useState(0);
 
-{
-const [z,setz]=useState(0)
-const [x, setx] = useState(0);
-const [y, sety] = useState(0);
-function fun()
-{  
-
-   setz(x+y);
+function getdata(e){
+    console.log(e.target.value)
 }
+// function fun()
+// {  
+
+//    setz(x+y);
+// }
     return(
     <div>
-        <div>{z}</div>
-        <input type="text" onChange={(e)=>{ setx(parseInt(e.target.value))}}/>
-        <input type="text" onChange={(e)=>{ sety(parseInt(e.target.value))}}/>
-        <button onClick={fun}>add</button>
+        <div></div>
+        <input type="text" onChange={(e)=>{ getdata(e)}}/>
+        <input type="text" onChange={(e)=>{ }}/>
+        <button>add</button>
     </div>
     )
 }
