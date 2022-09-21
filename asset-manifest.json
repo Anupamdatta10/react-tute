@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/react-tute/static/css/main.fe56fdc5.chunk.css",
+    "main.js": "/react-tute/static/js/main.2df4d8e9.chunk.js",
+    "main.js.map": "/react-tute/static/js/main.2df4d8e9.chunk.js.map",
+    "runtime-main.js": "/react-tute/static/js/runtime-main.dd54179b.js",
+    "runtime-main.js.map": "/react-tute/static/js/runtime-main.dd54179b.js.map",
+    "static/js/2.6d0691fb.chunk.js": "/react-tute/static/js/2.6d0691fb.chunk.js",
+    "static/js/2.6d0691fb.chunk.js.map": "/react-tute/static/js/2.6d0691fb.chunk.js.map",
+    "static/js/3.fc997e04.chunk.js": "/react-tute/static/js/3.fc997e04.chunk.js",
+    "static/js/3.fc997e04.chunk.js.map": "/react-tute/static/js/3.fc997e04.chunk.js.map",
+    "index.html": "/react-tute/index.html",
+    "static/css/main.fe56fdc5.chunk.css.map": "/react-tute/static/css/main.fe56fdc5.chunk.css.map",
+    "static/js/2.6d0691fb.chunk.js.LICENSE.txt": "/react-tute/static/js/2.6d0691fb.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.dd54179b.js",
+    "static/js/2.6d0691fb.chunk.js",
+    "static/css/main.fe56fdc5.chunk.css",
+    "static/js/main.2df4d8e9.chunk.js"
+  ]
+}
